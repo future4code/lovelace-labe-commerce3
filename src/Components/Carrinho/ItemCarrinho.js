@@ -11,11 +11,16 @@ const ContainerItem = styled.div`
     justify-content: space-between;
 `
 
+const ContainerNome = styled.span`
+    margin-left: -70px;
+`
+
 class ItemCarrinho extends React.Component {
     render() {
         return (
             <ContainerItem>
-                <span>2x - Camisa Alfa</span>
+                <span>2x</span>
+                <ContainerNome>Camisa Alfa</ContainerNome>
                 <button>Remover</button>
             </ContainerItem>
         )
