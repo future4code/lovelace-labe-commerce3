@@ -14,8 +14,8 @@ import './App.css';
 function App() {
   return (
     <div>
-      <Filtros />
-      <Produtos />
+      {/* <Filtros />
+      <Produtos /> */}
       <Carrinho />
     </div>
   );
