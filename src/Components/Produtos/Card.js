@@ -2,9 +2,10 @@ import React from 'react'
 import Styled from 'styled-components'
 
 const ContainerCard = Styled.div`
-    height: 450px;
-    width: 300px;
-    border: 1px solid black;
+    height: 350px;
+    width: 200px;
+    /* border: 1px solid black; */
+    box-shadow: 2px 2px 5px 2px LightSteelBlue;
     text-align: center;
     > img {
         width: 100%;

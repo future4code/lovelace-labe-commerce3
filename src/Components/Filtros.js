@@ -5,7 +5,16 @@ import styled from 'styled-components'
 const FilterContainer = styled.div`
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    width: 200px;
+    height: 500px;
+    margin-left: 10px;
+    padding: 5px;
+    align-items: center;
+    margin-top: 10px;
+    box-shadow: 2px 2px 5px 2px LightSteelBlue;
+    border-radius: 5px;
+    font-size: 0.8rem;
 `
 
 

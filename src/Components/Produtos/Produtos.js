@@ -10,14 +10,12 @@ import Card from './Card'
 
 const ContainerProdutos = Styled.div`
     display: flex;
+    flex-direction: column;
     width: 60%;
+    /* height: 500px; */
     padding: 15px;
     margin:0 auto;
-    flex-wrap: wrap;
-
-    > div{
-        margin: 10px;
-    }
+    /* flex-wrap: wrap; */
 `
 const Header = Styled.div`
     display:flex;
@@ -25,6 +23,15 @@ const Header = Styled.div`
     justify-content: space-between;
     > div {
         margin-right: 60px;
+    }
+`
+
+const ContainerCards = Styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    > div{
+        margin: 10px;
     }
 `
 
@@ -125,6 +132,8 @@ class Produtos extends React.Component {
                 } else {
                     return false
                 }
+            } else {
+                return true
             }
         })
     
@@ -140,7 +149,9 @@ class Produtos extends React.Component {
                         </select>
                     </div>
                 </Header>
-                {listaFiltrada}
+                <ContainerCards>
+                    {listaFiltrada}
+                </ContainerCards>
             </ContainerProdutos>
 
         )

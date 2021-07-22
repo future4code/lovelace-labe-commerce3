@@ -5,12 +5,39 @@ import Carrinho from './Components/Carrinho/Carrinho'
 import {parse, stringify} from 'flatted';
 import styled from 'styled-components';
 import './App.css';
+import nebulosa1 from './Components/Img/nebulosa1.png'
+
+const ContainerMain = styled.div`
+  display: flex;
+  /* grid-template-columns: 1fr 4fr 1fr; */
+  justify-content: center;
+  /* background:url(${nebulosa1});
+  background-repeat: no-repeat;
+  background-size: 100%; */
+  /* background-color: black; */
+`
 
 const ContainerGeral = styled.div`
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-  justify-content: center;
+  grid-template-rows: 70px 1fr 60px;
 `
+
+const Header = styled.header`
+  background-color: skyblue;
+  font-family: 'Qahiri', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  > h1 {
+    padding-bottom: 20px;
+  }
+`
+
+const Footer = styled.footer`
+  background-color: skyblue;
+`
+
 
 class App extends React.Component {
   state = {
@@ -20,7 +47,7 @@ class App extends React.Component {
     // Valores Filtro
     valorMin: 0,
     valorMax: 500,
-    buscaNome: " ",
+    buscaNome: "",
   }
 
   componentDidMount() {
@@ -74,24 +101,34 @@ class App extends React.Component {
   render() {
     return (
       <ContainerGeral>
-        <Filtros 
-        onChangeValorMin={this.onChangeValorMin}
-        onChangeValorMax={this.onChangeValorMax}
-        onChangeBuscaNome={this.onChangeBuscaNome}
-        estadoValorMin={this.state.valorMin}
-        estadoValorMax={this.state.valorMax}
-        estadoBuscaNome={this.state.buscaNome}
-        />
-        <Produtos 
-        adicionaAoCarrinho={this.adicionaAoCarrinho} 
-        estadoValorMin={this.state.valorMin}
-        estadoValorMax={this.state.valorMax}
-        estadoBuscaNome={this.state.buscaNome}
-        />
-        <Carrinho
-          total={this.state.total}
-          retiraDoCarrinho={this.retiraDoCarrinho}
-          carrinho={this.state.carrinho} />
+        <Header>
+          <h1>SpaceWear</h1>
+        </Header>
+
+        <ContainerMain>
+          <Filtros 
+          onChangeValorMin={this.onChangeValorMin}
+          onChangeValorMax={this.onChangeValorMax}
+          onChangeBuscaNome={this.onChangeBuscaNome}
+          estadoValorMin={this.state.valorMin}
+          estadoValorMax={this.state.valorMax}
+          estadoBuscaNome={this.state.buscaNome}
+          />
+          <Produtos 
+          adicionaAoCarrinho={this.adicionaAoCarrinho} 
+          estadoValorMin={this.state.valorMin}
+          estadoValorMax={this.state.valorMax}
+          estadoBuscaNome={this.state.buscaNome}
+          />
+          <Carrinho
+            total={this.state.total}
+            retiraDoCarrinho={this.retiraDoCarrinho}
+            carrinho={this.state.carrinho} />
+        </ContainerMain>
+
+        <Footer>
+          
+        </Footer>
       </ContainerGeral>
     );
   }
