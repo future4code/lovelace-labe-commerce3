@@ -13,9 +13,6 @@ const ContainerCard= Styled.div`
 
 
 
-
-
-
 class Card extends React.Component{
     render(){
         
@@ -25,7 +22,7 @@ class Card extends React.Component{
                 <p>{this.props.nome}</p>
                 <p>R$ {this.props.preco}</p>
 
-                <button>Adicionar ao Carrinho</button>
+                <button onClick={() => this.props.adicionaAoCarrinho(this.props.camiseta)}>Adicionar ao Carrinho</button>
 
             </ContainerCard>
 

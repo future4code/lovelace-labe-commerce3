@@ -84,12 +84,26 @@ class Produtos extends React.Component {
         
         
          ];
-         const listaProdutos = Produtos.map(camiseta => {
+
+         const listaOrdenada = Produtos.sort((a, b) => {
+            if (this.state.ordenacao === 'crescente') {
+                return a.nome.localeCompare(b.nome)
+            } else {
+                return b.nome.localeCompare(a.nome)
+            }
+        })
+
+
+
+
+
+         const listaProdutos = listaOrdenada.map(camiseta => {
              return (
                  <Card
                  nome={camiseta.nome}
                  preco={camiseta.preco}
                  imagem={camiseta.imagem}
+                 camiseta={camiseta}
                  />
              )
 
