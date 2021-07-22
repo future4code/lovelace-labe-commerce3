@@ -7,35 +7,35 @@ const ContainerCarrinho = styled.div`
     width: 300px;
     height: 500px;
     border: 1px solid black;
-    margin: 0 auto;
+    margin-top: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
 `
 const ContainerPreço = styled.div`
     display: flex;
-    width: 90%;
 `
-
 
 class Carrinho extends React.Component {
 
-
-
     render() {
 
-
-
+        const listaCarrinho = this.props.carrinho.map(item => {
+            return (
+                <ItemCarrinho 
+                key={item.id}
+                nome={item.camiseta.nome}
+                id={item.id}
+                retiraDoCarrinho={this.props.retiraDoCarrinho}
+                />
+            )
+        })
         return(
             <ContainerCarrinho>
                 <h3>Carrinho:</h3>
-                <ItemCarrinho />
-                <ItemCarrinho />
-                <ItemCarrinho />
-                <ItemCarrinho />
-                <ItemCarrinho />
+                {listaCarrinho}
                 <ContainerPreço>
-                    <p>Total: R$ 52.368,45</p>
+                    <p>Valor Total: R$ {this.props.total},00</p>
                 </ContainerPreço>
             </ContainerCarrinho>
         )
