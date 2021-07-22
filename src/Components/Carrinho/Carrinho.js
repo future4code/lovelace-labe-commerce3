@@ -4,13 +4,18 @@ import styled from 'styled-components';
 
 
 const ContainerCarrinho = styled.div`
-    width: 300px;
+    width: 290px;
     height: 500px;
-    border: 1px solid black;
-    margin-top: 120px;
+    /* border: 1px solid black; */
+    /* margin-top: 120px; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 0.8rem;
+    margin-right: 10px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 5px 2px LightSteelBlue;
+    border-radius: 5px;
 `
 const ContainerPreço = styled.div`
     display: flex;

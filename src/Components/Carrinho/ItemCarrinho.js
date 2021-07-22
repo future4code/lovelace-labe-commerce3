@@ -11,7 +11,7 @@ const ContainerItem = styled.div`
 `
 
 const ContainerNome = styled.span`
-    margin-left: -70px;
+    /* margin-left: -70px; */
 `
 
 class ItemCarrinho extends React.Component {
