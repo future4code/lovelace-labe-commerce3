@@ -10,24 +10,7 @@ const FilterContainer = styled.div`
 
 
 class Filtros extends React.Component {
-    state = {
-        valorMin: "",
-        valorMax: "",
-        valorProduto: "",
-    }
-
-    onChangeValorMin = (event) => {
-        this.setState({valorMin: event.target.value})
-    }
-
-    onChangeValorMax = (event) => {
-        this.setState({valorMax: event.target.value})
-    }
-
-    onChangeValorProduto = (event) => {
-        this.setState({valorProduto: event.target.value})
-    }
-    
+   
     render() {
         return (
             <FilterContainer>
@@ -37,8 +20,8 @@ class Filtros extends React.Component {
                     <input 
                     name={"valorMinimo"}
                     type="number"
-                    onChange={this.onChangeValorMin}
-                    value={this.state.valorMin}
+                    onChange={this.props.onChangeValorMin}
+                    value={this.props.estadoValorMin}
                     
                     />
                 </div>
@@ -47,8 +30,8 @@ class Filtros extends React.Component {
                     <input 
                     name={"valorMaximo"}
                     type="number"
-                    onChange={this.onChangeValorMax}
-                    value={this.state.valorMax}
+                    onChange={this.props.onChangeValorMax}
+                    value={this.props.estadoValorMax}
 
                     />
                 </div>
@@ -57,8 +40,8 @@ class Filtros extends React.Component {
                     <input 
                     name={"nome"}
                     type="text"
-                    onChange={this.onChangeValorProduto}
-                    value={this.state.valorProduto}
+                    onChange={this.props.onChangeBuscaNome}
+                    value={this.props.estadoBuscaNome}
                     
 
                     />

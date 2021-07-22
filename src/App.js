@@ -9,12 +9,18 @@ import './App.css';
 const ContainerGeral = styled.div`
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
+  justify-content: center;
 `
 
 class App extends React.Component {
   state = {
+    // Valores Carrinho
     carrinho: [],
-    total: 0
+    total: 0,
+    // Valores Filtro
+    valorMin: 0,
+    valorMax: 500,
+    buscaNome: " ",
   }
 
   componentDidMount() {
@@ -51,11 +57,37 @@ class App extends React.Component {
     this.setState({ total: totalCarrinho })
   }
 
+  // métodos filtro
+  onChangeValorMin = (event) => {
+      this.setState({valorMin: event.target.value})
+  }
+
+  onChangeValorMax = (event) => {
+      this.setState({valorMax: event.target.value})
+  }
+
+  onChangeBuscaNome = (event) => {
+      this.setState({buscaNome: event.target.value})
+  }
+
+
   render() {
     return (
       <ContainerGeral>
-        <Filtros />
-        <Produtos adicionaAoCarrinho={this.adicionaAoCarrinho} />
+        <Filtros 
+        onChangeValorMin={this.onChangeValorMin}
+        onChangeValorMax={this.onChangeValorMax}
+        onChangeBuscaNome={this.onChangeBuscaNome}
+        estadoValorMin={this.state.valorMin}
+        estadoValorMax={this.state.valorMax}
+        estadoBuscaNome={this.state.buscaNome}
+        />
+        <Produtos 
+        adicionaAoCarrinho={this.adicionaAoCarrinho} 
+        estadoValorMin={this.state.valorMin}
+        estadoValorMax={this.state.valorMax}
+        estadoBuscaNome={this.state.buscaNome}
+        />
         <Carrinho
           total={this.state.total}
           retiraDoCarrinho={this.retiraDoCarrinho}

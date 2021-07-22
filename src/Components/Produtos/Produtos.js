@@ -44,38 +44,38 @@ class Produtos extends React.Component {
         const Produtos = [
             {
                 id: 1,
-                nome: 'Camiseta 1',
+                nome: 'Camiseta Astronauta Perdido',
                 preco: 50,
                 imagem: <img src={Camiseta1} alt="Foto Produto"/>
             },
             {
                 id: 2,
-                nome: 'Camiseta 2',
-                preco: 50,
+                nome: 'Camiseta Planetas',
+                preco: 45,
                 imagem: <img src={Camiseta2} alt="Foto Produto"/>
             },
             {
                 id: 3,
-                nome: 'Camiseta 3',
-                preco: 50,
+                nome: 'Camiseta Astronauta Voador',
+                preco: 60,
                 imagem: <img src={Camiseta3} alt="Foto Produto"/>
             },
             {
                 id: 4,
-                nome: 'Camiseta 4',
-                preco: 50,
+                nome: 'Camiseta Nebulosa',
+                preco: 30,
                 imagem: <img src={Camiseta4} alt="Foto Produto"/>
             },
             {
                 id: 5,
-                nome: 'Camiseta 5',
-                preco: 50,
+                nome: 'Camiseta Pisando na Lua',
+                preco: 100,
                 imagem: <img src={Camiseta5} alt="Foto Produto"/>
             },
             {
                 id: 6,
-                nome: 'Camiseta 6',
-                preco: 50,
+                nome: 'Camiseta Gatinho Astronauta',
+                preco: 20,
                 imagem: <img src={Camiseta6} alt="Foto Produto"/>
             }
 
@@ -104,6 +104,29 @@ class Produtos extends React.Component {
 
 
         })
+
+        const listaFiltrada = listaProdutos.filter(produto => {
+            console.log(produto)
+            if(produto.props.preco >= this.props.estadoValorMin) {
+                return true
+            } else {
+                return false
+            }
+        }).filter(produto => {
+            if(produto.props.preco <= this.props.estadoValorMax) {
+                return true
+            } else {
+                return false
+            }
+        }).filter(produto => {
+            if (this.props.estadoBuscaNome) {
+                if (produto.props.nome.toLowerCase().includes(this.props.estadoBuscaNome.toLowerCase())) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        })
     
         return (
             <ContainerProdutos>
@@ -117,7 +140,7 @@ class Produtos extends React.Component {
                         </select>
                     </div>
                 </Header>
-                {listaProdutos}
+                {listaFiltrada}
             </ContainerProdutos>
 
         )
