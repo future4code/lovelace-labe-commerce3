@@ -16,9 +16,14 @@ const ContainerCarrinho = styled.div`
     margin-top: 10px;
     box-shadow: 2px 2px 5px 2px LightSteelBlue;
     border-radius: 5px;
+    background-color: white;
 `
 const ContainerPreço = styled.div`
     display: flex;
+    /* box-shadow: 2px 2px 5px 2px LightSteelBlue;
+    margin: 5px 0;
+    border-radius: 5px;
+    padding: 5px; */
 `
 
 class Carrinho extends React.Component {

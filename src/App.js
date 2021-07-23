@@ -1,25 +1,25 @@
 import React from 'react';
+import './App.css';
 import Filtros from './Components/Filtros'
 import Produtos from './Components/Produtos/Produtos'
 import Carrinho from './Components/Carrinho/Carrinho'
-import {parse, stringify} from 'flatted';
+import iconFacebook from './Components/Img/logo-do-facebook.png'
+import iconGithub from './Components/Img/github.png'
+import iconTwitter from './Components/Img/twitter2.png'
+import iconInstagram from './Components/Img/instagram.png'
+import { parse, stringify } from 'flatted';
 import styled from 'styled-components';
-import './App.css';
-import nebulosa1 from './Components/Img/nebulosa1.png'
 
 const ContainerMain = styled.div`
   display: flex;
-  /* grid-template-columns: 1fr 4fr 1fr; */
   justify-content: center;
-  /* background:url(${nebulosa1});
-  background-repeat: no-repeat;
-  background-size: 100%; */
-  /* background-color: black; */
 `
 
 const ContainerGeral = styled.div`
   display: grid;
-  grid-template-rows: 70px 1fr 60px;
+  grid-template-rows: 70px 1fr 80px;
+  min-height: 100vh;
+  background-color: whitesmoke;
 `
 
 const Header = styled.header`
@@ -36,8 +36,10 @@ const Header = styled.header`
 
 const Footer = styled.footer`
   background-color: skyblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
-
 
 class App extends React.Component {
   state = {
@@ -55,7 +57,7 @@ class App extends React.Component {
       carrinho: parse(localStorage.getItem('carrinho'))
     })
   }
-  
+
   componentDidUpdate(prevProps, prevState) {
     if (prevState.carrinho !== this.state.carrinho) {
       this.atualizaTotal()
@@ -86,15 +88,15 @@ class App extends React.Component {
 
   // métodos filtro
   onChangeValorMin = (event) => {
-      this.setState({valorMin: event.target.value})
+    this.setState({ valorMin: event.target.value })
   }
 
   onChangeValorMax = (event) => {
-      this.setState({valorMax: event.target.value})
+    this.setState({ valorMax: event.target.value })
   }
 
   onChangeBuscaNome = (event) => {
-      this.setState({buscaNome: event.target.value})
+    this.setState({ buscaNome: event.target.value })
   }
 
 
@@ -106,19 +108,19 @@ class App extends React.Component {
         </Header>
 
         <ContainerMain>
-          <Filtros 
-          onChangeValorMin={this.onChangeValorMin}
-          onChangeValorMax={this.onChangeValorMax}
-          onChangeBuscaNome={this.onChangeBuscaNome}
-          estadoValorMin={this.state.valorMin}
-          estadoValorMax={this.state.valorMax}
-          estadoBuscaNome={this.state.buscaNome}
+          <Filtros
+            onChangeValorMin={this.onChangeValorMin}
+            onChangeValorMax={this.onChangeValorMax}
+            onChangeBuscaNome={this.onChangeBuscaNome}
+            estadoValorMin={this.state.valorMin}
+            estadoValorMax={this.state.valorMax}
+            estadoBuscaNome={this.state.buscaNome}
           />
-          <Produtos 
-          adicionaAoCarrinho={this.adicionaAoCarrinho} 
-          estadoValorMin={this.state.valorMin}
-          estadoValorMax={this.state.valorMax}
-          estadoBuscaNome={this.state.buscaNome}
+          <Produtos
+            adicionaAoCarrinho={this.adicionaAoCarrinho}
+            estadoValorMin={this.state.valorMin}
+            estadoValorMax={this.state.valorMax}
+            estadoBuscaNome={this.state.buscaNome}
           />
           <Carrinho
             total={this.state.total}
@@ -127,7 +129,40 @@ class App extends React.Component {
         </ContainerMain>
 
         <Footer>
-          
+          <div class="wrapper">
+            <a target="_blank" href="https://www.facebook.com">
+              <div class="icon facebook">
+                <img src={iconFacebook} />
+                <div class="tooltip">Facebook</div>
+                <span><i class="fab fa-facebook-f"></i></span>
+              </div>
+            </a>
+
+            <a target="_blank" href="https://www.twitter.com">
+              <div class="icon twitter">
+                <img src={iconTwitter} />
+                <div class="tooltip">Twitter</div>
+                <span><i class="fab fa-twitter"></i></span>
+              </div>
+            </a>
+
+            <a target="_blank" href="https://www.instagram.com">
+              <div class="icon instagram">
+                <img src={iconInstagram} />
+                <div class="tooltip">Instagram</div>
+                <span><i class="fab fa-instagram"></i></span>
+              </div>
+            </a>
+            
+            <a target="_blank" href="https://github.com/future4code/lovelace-labe-commerce3">
+              <div class="icon github">
+                <img src={iconGithub} />
+                <div class="tooltip">Github</div>
+                <span><i class="fab fa-github"></i></span>
+              </div>
+            </a>
+  
+          </div>
         </Footer>
       </ContainerGeral>
     );
