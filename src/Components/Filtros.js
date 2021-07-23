@@ -1,5 +1,4 @@
 import React from 'react'
-import App from '../App'
 import styled from 'styled-components'
 
 const FilterContainer = styled.div`
@@ -7,7 +6,7 @@ const FilterContainer = styled.div`
     flex-direction: column;
     /* border: 1px solid black; */
     width: 200px;
-    height: 500px;
+    height: 490px;
     margin-left: 10px;
     padding: 5px;
     align-items: center;
@@ -15,6 +14,14 @@ const FilterContainer = styled.div`
     box-shadow: 2px 2px 5px 2px LightSteelBlue;
     border-radius: 5px;
     font-size: 0.8rem;
+    background-color: white;
+    
+    > div > input {
+        border-radius: 5px;
+        height: 25px;
+        box-shadow: 2px 2px 5px 2px LightSteelBlue;
+        border-width: 1px;
+    }
 `
 
 

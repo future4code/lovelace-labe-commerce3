@@ -1,9 +1,9 @@
 import React from 'react'
 import Styled from 'styled-components'
-import Camiseta1 from './Camiseta-1.jpg'
+import Camiseta1 from '../Img/Camiseta-1.jpg'
 import Camiseta2 from '../Img/camiseta2.jpg'
 import Camiseta3 from '../Img/camiseta3.jpg'
-import Camiseta4 from '../Img/camiseta4.jpg'
+import Camiseta4 from '../Img/camiseta7.jpg'
 import Camiseta5 from '../Img/camiseta5.jpg'
 import Camiseta6 from '../Img/camiseta6.jpg'
 import Card from './Card'
@@ -30,6 +30,7 @@ const ContainerCards = Styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 10px;
     > div{
         margin: 10px;
     }
@@ -82,7 +83,7 @@ class Produtos extends React.Component {
             {
                 id: 6,
                 nome: 'Camiseta Gatinho Astronauta',
-                preco: 20,
+                preco: 80,
                 imagem: <img src={Camiseta6} alt="Foto Produto"/>
             }
 
