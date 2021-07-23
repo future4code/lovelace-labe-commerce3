@@ -130,33 +130,33 @@ class App extends React.Component {
 
         <Footer>
           <div class="wrapper">
-            <a target="_blank" href="https://www.facebook.com">
+            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com">
               <div class="icon facebook">
-                <img src={iconFacebook} />
+                <img src={iconFacebook} alt="" />
                 <div class="tooltip">Facebook</div>
                 <span><i class="fab fa-facebook-f"></i></span>
               </div>
             </a>
 
-            <a target="_blank" href="https://www.twitter.com">
+            <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com">
               <div class="icon twitter">
-                <img src={iconTwitter} />
+                <img src={iconTwitter} alt="" />
                 <div class="tooltip">Twitter</div>
                 <span><i class="fab fa-twitter"></i></span>
               </div>
             </a>
 
-            <a target="_blank" href="https://www.instagram.com">
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com">
               <div class="icon instagram">
-                <img src={iconInstagram} />
+                <img src={iconInstagram} alt="" />
                 <div class="tooltip">Instagram</div>
                 <span><i class="fab fa-instagram"></i></span>
               </div>
             </a>
             
-            <a target="_blank" href="https://github.com/future4code/lovelace-labe-commerce3">
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/future4code/lovelace-labe-commerce3">
               <div class="icon github">
-                <img src={iconGithub} />
+                <img src={iconGithub} alt="" />
                 <div class="tooltip">Github</div>
                 <span><i class="fab fa-github"></i></span>
               </div>
